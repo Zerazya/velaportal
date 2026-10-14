@@ -1,0 +1,56 @@
+# VelaPortal
+
+# Monde de destination (téléportation aléatoire). Peut être changé par portail : /vportal target <nom> <monde>
+target-world: construction
+
+random:
+  center-x: 0
+  center-z: 0
+  min-radius: 200
+  max-radius: 3000
+  attempts: 15
+  # Si le monde cible a une bordure, le centre et le rayon max s'y adaptent automatiquement.
+  use-world-border: true
+
+portal:
+  default-width: 9
+  default-height: 13
+  # 2 = ovale, 3 = bien arrondi, 4 = rectangle aux coins arrondis, plus grand = plus carré
+  roundness: 3.0
+  # Couleur du voile : WHITE, ORANGE, MAGENTA, LIGHT_BLUE, YELLOW, LIME, PINK, GRAY, LIGHT_GRAY,
+  # CYAN, PURPLE, BLUE, BROWN, GREEN, RED, BLACK
+  color: CYAN
+  # Blocs du cadre (choisis au hasard dans cette liste)
+  frame-materials: [CRYING_OBSIDIAN, OBSIDIAN, OBSIDIAN, BLACKSTONE]
+
+cooldown-ms: 3000
+
+effects:
+  sound: true
+  ambient-sound: true
+  particles: true
+
+messages:
+  prefix: "<dark_gray>[<aqua>Portail<dark_gray>] "
+  no-permission: "<red>Vous n'avez pas la permission."
+  no-permission-use: "<red>Vous ne pouvez pas utiliser ce portail."
+  players-only: "<red>Commande réservée aux joueurs."
+  usage: "<gray>Usage : <white><usage>"
+  help: "<gray>/vportal <white>create <nom> [largeur] [hauteur]<gray> | <white>delete <nom><gray> | <white>list<gray> | <white>tp <nom><gray> | <white>color <nom> <couleur><gray> | <white>target <nom> <monde|default><gray> | <white>reload"
+  unknown: "<red>Portail introuvable : <white><name>"
+  exists: "<red>Un portail nommé <white><name><red> existe déjà."
+  bad-name: "<red>Nom invalide (a-z, 0-9, _ et -, 32 caractères max)."
+  bad-number: "<red>Nombre invalide."
+  bad-size: "<red>Taille invalide (largeur 5-31, hauteur 7-45)."
+  bad-color: "<red>Couleur inconnue (white, orange, magenta, light_blue, yellow, lime, pink, gray, light_gray, cyan, purple, blue, brown, green, red, black)."
+  too-high: "<red>Pas assez de place en hauteur ici."
+  world-missing: "<red>Le monde <white><world><red> n'existe pas ou n'est pas chargé."
+  created: "<green>Portail <white><name><green> créé (<size>) devant vous. Le cadre a remplacé les blocs sur place."
+  deleted: "<green>Portail <white><name><green> supprimé."
+  updated: "<green>Portail <white><name><green> mis à jour."
+  reloaded: "<green>Rechargé : <white><count><green> portail(s)."
+  list-empty: "<gray>Aucun portail."
+  list-line: "<gray> - <white><name> <dark_gray>(<size>, <color>, <world> <x> <y> <z>) <gray>→ <aqua><target>"
+  searching: "<gray>Recherche d'un endroit sûr..."
+  no-safe-spot: "<red>Aucun endroit sûr trouvé, réessayez."
+  arrived: "<green>Vous êtes arrivé en <white><x> <y> <z><green> (<world>)."

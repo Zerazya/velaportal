@@ -1,0 +1,20 @@
+name: VelaPortal
+version: '${version}'
+main: fr.velaportal.VelaPortalPlugin
+api-version: '26.2'
+description: Grands portails arrondis colorés qui téléportent au hasard dans un monde (ex. construction)
+commands:
+  vportal:
+    description: Gestion des portails VelaPortal
+    usage: /vportal create <nom> [largeur] [hauteur]
+    aliases: [velaportal]
+permissions:
+  velaportal.admin:
+    description: Créer et supprimer les portails
+    default: op
+  velaportal.use:
+    description: Utiliser les portails
+    default: true
+  velaportal.bypass.cooldown:
+    description: Ignorer le délai entre deux téléportations
+    default: op
